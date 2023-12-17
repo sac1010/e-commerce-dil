@@ -17,12 +17,12 @@ const Navbar = () => {
           placeholder="search for products, brands and more"
         />
       </div>
-      <div>
+      <Link href={'/cart'}>
         <span className="text-lg font-bold text-red-600">🛒 Cart</span>
         <span className="w-4 h-4 bg-red-600 p-2 m-2 rounded-full text-white font-bold">
           {cartItems.length}
         </span>
-      </div>
+      </Link>
     </div>
   );
 };

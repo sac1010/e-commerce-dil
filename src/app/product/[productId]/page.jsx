@@ -28,7 +28,7 @@ const ProductDetails = () => {
   };
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
   const handleCart = () => {
     const updatedData = { ...productDetails, quantity };
     dispatch(addToCart(updatedData));

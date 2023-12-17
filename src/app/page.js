@@ -19,7 +19,7 @@ export default function Home() {
   };
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [getProducts]);
   return (
     <div className="mt-16">
       <div className="w-full  bg-red-500 flex items-center justify-center h-10 text-white font-medium">

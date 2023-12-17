@@ -6,7 +6,7 @@ const Cart = () => {
     const cartItems = useSelector((state) => state.cart.cart);
     useEffect(()=>{
         console.log(cartItems, "cart")
-    },[])
+    },[cartItems])
   return (
     <div className='w-full lg;w-3/4 mx-auto mt-32 '>
         <div className='w-1/2 mx-auto'>

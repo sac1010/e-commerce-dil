@@ -19,7 +19,7 @@ export default function Home() {
       <div className="w-full  bg-red-500 flex items-center justify-center h-10 text-white font-medium">
         🎁 Christmas offer: up to 50% off. Shop now and unwrap the joy!
       </div>
-      <div className="xl:w-3/4 mx-auto grid grid-cols-12 gap-20 py-12">
+      <div className="xl:w-3/4 w-full mx-auto grid grid-cols-12 lg:gap-20 gap-4 py-12">
         {data.map((product) => {
           return <Product key={product.id} product={product} />;
         })}

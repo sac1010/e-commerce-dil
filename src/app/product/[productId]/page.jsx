@@ -3,13 +3,14 @@ import { addToCart } from "@/redux/features/cartSlice";
 import { setLoading, setProductDetail } from "@/redux/features/productsSlice";
 import axios from "axios";
 import Image from "next/image";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const ProductDetails = () => {
   //   const [data, setData] = useState();
   const params = useParams();
+  const router = useRouter();
   const { productId } = params;
   const dispatch = useDispatch();
   const productDetails = useSelector((state) => state.products.productDetails);
@@ -32,6 +33,7 @@ const ProductDetails = () => {
   const handleCart = () => {
     const updatedData = { ...productDetails, quantity };
     dispatch(addToCart(updatedData));
+    router.push("/cart");
   };
 
   if (loading || !productDetails) {

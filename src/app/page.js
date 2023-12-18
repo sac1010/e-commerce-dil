@@ -14,12 +14,11 @@ export default function Home() {
   const getProducts = async () => {
     dispatch(setLoading(true));
     const res = await axios.get("https://fakestoreapi.com/products");
-    dispatch(setLoading(false));
     dispatch(setProducts(res.data));
   };
   useEffect(() => {
     getProducts();
-  }, [getProducts]);
+  }, []);
   return (
     <div className="mt-16">
       <div className="w-full  bg-red-500 flex items-center justify-center h-10 text-white font-medium">
@@ -31,7 +30,10 @@ export default function Home() {
               return <Product key={product.id} product={product} />;
             })
           : [1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-              <div div key={i} className="lg:col-span-3 h-[300px] col-span-12 sm:col-span-6 rounded-xl bg-gray-300 animate-pulse p-2"></div>
+              <div
+                key={i}
+                className="lg:col-span-3 h-[300px] col-span-12 sm:col-span-6 rounded-xl bg-gray-300 animate-pulse p-2"
+              ></div>
             ))}
       </div>
     </div>
